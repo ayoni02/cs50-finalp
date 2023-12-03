@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="/static/styles.css" rel="stylesheet">
+        <title>Tweet Sentiment</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Check For Bad Tweet</h1>
+        </div>
+        <div class="container">
+            <div class="section">
+
+                <h2>Input your tweet here</h2>
+                <!-- TODO: Create a form for users to submit a name, a month, and a day -->
+                <form action="/" method="post">
+                    <input autocomplete="off" autofocus name="name" placeholder="Tweet" type="text">
+                    <!--input type = "file" name = "upload" accept = "image/*" /-->
+                    <button type="submit">Check<button>
+                </form>
+            </div>
+
+            <div class="section">
+
+                <h2>All Tweets</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Tweets</th>
+                            <th>Sentiments</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- TODO: Loop through the database entries to display them in this table -->
+                            {% for name in tab %}
+                                <tr>
+                                    <td>{{ name.id }}</td>
+                                    <td>{{ name.tweet }}</td>
+                                    <td>{{ name.sentiment }}</td>
+                                    <td>
+                                        <form action="/deregister" method="post">
+                                            <input name="ide" type="hidden" value="{{ name.id }}">
+                                            <input type="submit" value="deregister">
+                                        </form>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
