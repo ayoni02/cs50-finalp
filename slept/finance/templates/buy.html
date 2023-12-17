@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <form action="/buy" method="post">
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="symbol" placeholder="Stock symbol" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Check</button>
+    </form>
+    <footer>
+        <div>
+            <h2>Prices</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Prices</td>
+                        <td>Symbol</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ buyl["name"] }}</td>
+                        <td>{{ buyl["price"] }}</td>
+                        <td>{{ buyl["symbol"] }}</td>
+                        <td>
+                            <form action="/bought" method="post">
+                                <input name="shares" type="number" placeholder="Input number of shares" value="0">
+                                <input type="submit" value="buy">
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </footer>
+{% endblock %}

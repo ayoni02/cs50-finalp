@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            function gotIt() {
+                document.getElementById("check").innerHTML = "Correct"
+                document.getElementById("correct").style.color = "green";
+            }
+            function gotItWrong() {
+                document.getElementById("check").innerHTML = "Incorrect"
+            }
+            function first() {
+                document.getElementById("first").style.color = "red";}
+            function second() {
+                document.getElementById("second").style.color = "red";}
+            function third() {
+                document.getElementById("third").style.color = "red";}
+            function getGood() {
+                //document.getElementById("space").innerHTML = "Daddy"
+                if (document.getElementById("space").value == "Daddy") {
+                    document.getElementById("check1").innerHTML = "correct"
+                    document.getElementById("space").style.color = "green"
+                }
+                else {
+                    document.getElementById("check1").innerHTML = "Incorrect"
+                    document.getElementById("space").style.color = "red"
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <div>
+                    <h3>
+                        What kind of animal is a cat
+                    </h3>
+                    <p id="check"></p>
+                    <button id="correct" onclick="gotIt()">Feline</button>
+                    <button class="incorrect" id="first" onclick="gotItWrong(); first()">canine</button>
+                    <button class="incorrect" id="second" onclick="gotItWrong(); second()">Serpent</button>
+                    <button class="incorrect" id="third" onclick="gotItWrong(); third()">Avian</button>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>
+                    Say my name girl
+                </h3>
+                <p id="check1"></p>
+                <input type="box" id="space"/>
+                <input type="submit" onclick="getGood()"/>
+            </div>
+        </div>
+    </body>
+</html>

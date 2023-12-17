@@ -1,0 +1,6 @@
+Get an input fro the user for the amount of blocks and store it as a variable name 'blocks'
+set a loop to check if the user input is between 1 and 8
+if not, prompt the user to give an input
+if correct, run a loop that runs for the amount of time the user has given
+for each loop, run a space for the number - the loop position and run a block for the number of loop
+end the program

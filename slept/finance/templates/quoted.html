@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Current Quote
+{% endblock %}
+
+{% block main %}
+    <h2>{{ quotes["name"] }} Price</h2>
+    <table>
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Prices</td>
+                <td>Symbol</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ quotes["name"] }}</td>
+                <td>{{ quotes["price"] }}</td>
+                <td>{{ quotes["symbol"] }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}
